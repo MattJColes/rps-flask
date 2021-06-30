@@ -4,6 +4,7 @@ build:
   commands:
     build:        
       - pip install pipenv
+      - pipenv shell
       - pipenv install
 run:
-  command: python app.py
+  command: flask run
