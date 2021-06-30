@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import random
 
 app = Flask(__name__)
-PORT = 5000
+PORT = 8080
 
 title = 'Rock, paper, scissors'
 computer_choice_options = ['🪨', '📜', '✂️']
