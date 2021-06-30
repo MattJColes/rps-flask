@@ -3,8 +3,10 @@ runtime: python3
 build:
   commands:
     build:        
-      - pip install pipenv
-      - pipenv shell
-      - pipenv install
+      - python -m venv env
+      - source env/bin/activate
+      - pip install -r requirements.txt
+      - sudo ufw allow 5000
 run:
-  command: flask run
+  command: gunicorn --bind 0.0.0.0:5000 wsgi:app
+  port: 5000
